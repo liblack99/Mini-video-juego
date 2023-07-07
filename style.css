@@ -1,0 +1,86 @@
+@font-face {
+    font-family: game;
+    src: url(./gameBoy.ttf);
+}
+html{
+    font-size: 65.2%;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: blueviolet;
+}
+main{
+    position: relative;
+}
+h1{
+    text-align: center;
+    font-family: game;
+    font-size: 3rem;
+    font-weight: 700;
+    color: aliceblue;
+}
+.game__container{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;  
+}
+
+#canvasGame{
+    border:  2px solid yellow;
+    border-radius: 8px;
+    
+}
+.information-game{
+    width: 300px;
+    height: auto;
+    border: 1px solid black;
+    border-radius: 8px;
+    position: relative;
+    left: 390px;
+    top: -490px;
+}
+.information-game p{
+    font-family: game;
+    font-weight: 700;
+    font-size: 2rem;
+    color: aliceblue;
+    margin-bottom: 8px;  
+    text-align: center;
+}
+button{
+    width: 100px;
+    height: 40px;
+    border-radius: 16px;
+    background-color: yellow;
+    font-size: 2.4rem;
+}
+#buttonLeft{
+    position: relative;
+    top: 40px;
+    left:50px ;
+}
+#buttonRight{
+    position: relative;
+    top: 40px;
+    right: 50px;
+}
+#buttonDown{
+    position: relative;
+    top: 80px;
+    right: 50px;
+}
+#buttonUp{
+    position: relative;
+    left: 50px;
+}
+@media (max-width: 1100px) {
+    .information-game{
+        left: 0px;
+        top: 100px;
+    }
+}

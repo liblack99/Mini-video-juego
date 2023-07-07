@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Video juego</title>
+</head>
+<body>
+    <h1>Video Game</h1>
+    <main class="game__container">
+        <canvas id="canvasGame"></canvas>
+        <div class="buttons">
+            <button id="buttonLeft">⬅</button>
+            <button id="buttonUp">⬆</button>
+            <button id="buttonDown">⬇</button>
+            <button id="buttonRight">➡</button>
+        </div>
+        <div id="information__game" class="information-game"> 
+            <p>Vidas: <span id="lives"></span></p>
+            <p>Tiempo: ⌛ <span id="time"></span></p>
+            <p>Record: 🏆 <span id="record"></span></p>
+            <p id ="result"></p>
+
+        </div>
+     </main>
+     
+     <script src="./src/maps.js"></script>
+     <script src="./src/game.js"></script>     
+</body>
+</html>
