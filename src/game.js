@@ -8,13 +8,16 @@ const livesSpan = document.getElementById("lives");
 const timeSpan = document.getElementById("time");
 const recordSpan = document.getElementById("record");
 const pResult = document.getElementById("result");
+const btnStart = document.getElementById("btnStart")
+const mainContainer = document.getElementById("gameContainer")
+const startContainer = document.getElementById("startContainer")
 
+btnStart.addEventListener("click", showGame)
 buttonUp.addEventListener("click", moveUp);
 buttonLeft.addEventListener("click", moveLeft);
 buttonRight.addEventListener("click", moveRight);
 buttonDown.addEventListener("click", moveDown);
 window.addEventListener("keydown", moveKeyboard);
-window.addEventListener('load', setCanvasSize);
 window.addEventListener('resize', setCanvasSize);
 
 
@@ -52,7 +55,7 @@ function setCanvasSize() {
   
   playerPosition.x = undefined;
   playerPosition.y = undefined;
-  startGame();
+  startGame()
 };
 
 function startGame() {
@@ -81,7 +84,7 @@ function startGame() {
   mapRowsColm.forEach((row, rowIndex) => { 
     row.forEach((colm, colmIndex) =>  {
       const emoji = emojis[colm];
-      const posiX = elementsSize * (colmIndex +1 );
+      const posiX = elementsSize * (colmIndex + 1 );
       const posiY = elementsSize * (rowIndex + 1);
       
       if (colm == "O") {
@@ -103,8 +106,15 @@ function startGame() {
     });
     
   });
+  // 
   movePlayer();
+  
 };
+function showGame(){
+  mainContainer.classList.toggle("hidden")
+  startContainer.classList.add("hidden")
+  setCanvasSize()
+}
 
 function movePlayer() {
   const collision = playerPosition.x.toFixed(3) == giftPosition.x.toFixed(3) && playerPosition.y.toFixed(3) == giftPosition.y.toFixed(3);
@@ -130,7 +140,7 @@ function gameWin(){
    clearInterval(timeInterval);
 
    const record = localStorage.getItem("record_time");
-   const playerTime = Date.now() - timeStart;
+   const playerTime = Date.now() - timeStart ;
     console.log(record)
    if (record) {
     if(record >= playerTime){
@@ -162,7 +172,7 @@ function showLives() {
   hearts.forEach(heart => livesSpan.append(heart));
 };
 function showTime(){
-   timeSpan.innerHTML = Date.now() - timeStart;
+   timeSpan.innerHTML = parseInt((Date.now() - timeStart) / 1000) ;
 };
 function showRecord() {
     recordSpan.innerHTML = localStorage.getItem("record_time")

@@ -27,7 +27,30 @@ h1{
     width: 100%;
     height: 100%;
     display: grid;
-    place-items: center;  
+    place-items: center;     
+}
+.game__container.hidden, .star-container.hidden{
+    display: none;
+}
+.star-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    top: 150px;
+    border: 1px solid yellow;
+    width: 350px;
+    height: 200px;
+    border-radius: 40px;
+    margin: 0 auto 0;
+    gap: 20px;
+}
+
+.star-container p{
+    font-family: game;
+    font-size: 2.4rem;
+    color: white;
 }
 
 #canvasGame{
@@ -59,25 +82,33 @@ button{
     background-color: yellow;
     font-size: 2.4rem;
 }
-#buttonLeft{
+.btn-left{
     position: relative;
     top: 40px;
     left:50px ;
 }
-#buttonRight{
+.btn-right{
     position: relative;
     top: 40px;
     right: 50px;
 }
-#buttonDown{
+.btn-down{
     position: relative;
     top: 80px;
     right: 50px;
 }
-#buttonUp{
+.btn-up{
     position: relative;
     left: 50px;
+    
 }
+.btn-star{
+    font-family: game;
+    width: 150px;
+    height: 40px;
+
+}
+
 @media (max-width: 1100px) {
     .information-game{
         left: 0px;
